@@ -1,0 +1,83 @@
+# Official docker image.
+image: python:3.11
+
+variables:
+  PIP_CACHE_DIR: $CI_PROJECT_DIR/.cache/pip
+  GIT_SUBMODULE_STRATEGY: recursive
+
+cache:
+  key: ${CI_COMMIT_REF_SLUG}
+  paths:
+    - $PIP_CACHE_DIR
+
+stages:
+  - test
+  - stage
+  - build
+
+before_script:
+  - python -V
+  #  - apk update
+  #  - apk add --no-cache --update python3-dev gcc build-base make git
+  - pip install poetry
+  - poetry config virtualenvs.create false
+  - poetry install
+
+lint:
+  stage: test
+  script:
+    - make lint
+  rules:
+    - changes:
+        # Will include the job and set to when:manual
+        # if any of the follow paths match a modified file.
+        - alexapy/*
+        - pylintrc
+        - setup.cfg
+        - pyproject.toml
+
+check_vulns:
+  stage: test
+  script:
+    - make check_vulns || true
+  rules:
+    - changes:
+        # Will include the job and set to when:manual
+        # if any of the follow paths match a modified file.
+        - poetry.lock
+        - alexapy/*
+        - pylintrc
+        - setup.cfg
+        - pyproject.toml
+    - allow_failure: true
+
+docs:
+  stage: build
+  script:
+    - make docs
+  rules:
+    - changes:
+        # Will include the job and set to when:manual
+        # if any of the follow paths match a modified file.
+        - alexapy/*
+        - docs/*
+
+bump_and_publish:
+  stage: build
+  variables:
+    PYPI_USERNAME: $PRODUCTION_USERNAME
+    PYPI_PASSWORD: $PRODUCTION_PASSWORD
+    GL_TOKEN: $GL_TOKEN
+  script:
+    - git config --global user.name "semantic-release (via GitLabCI)"
+    - git config --global user.email "semantic-release@GitLabCI"
+    - pip install python-semantic-release==7.34.6
+    - semantic-release publish
+    - poetry config http-basic.pypi $PYPI_USERNAME $PYPI_PASSWORD
+    - poetry publish --build
+    # - git push origin HEAD:dev
+  artifacts:
+    paths:
+      - dist
+  only:
+    - master@keatontaylor/alexapy

@@ -1,0 +1,1349 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>alexapy &mdash; AlexaPy 1.26.9 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="alexapy.alexaapi" href="alexapy.alexaapi.html" />
+    <link rel="prev" title="Welcome to alexapy’s documentation!" href="../index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> AlexaPy
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.26.9
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">alexapy</span></code></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#submodules">Submodules</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="alexapy.alexaapi.html"><code class="docutils literal notranslate"><span class="pre">alexapy.alexaapi</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="alexapy.alexahttp2.html"><code class="docutils literal notranslate"><span class="pre">alexapy.alexahttp2</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="alexapy.alexalogin.html"><code class="docutils literal notranslate"><span class="pre">alexapy.alexalogin</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="alexapy.alexaproxy.html"><code class="docutils literal notranslate"><span class="pre">alexapy.alexaproxy</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="alexapy.alexawebsocket.html"><code class="docutils literal notranslate"><span class="pre">alexapy.alexawebsocket</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="alexapy.const.html"><code class="docutils literal notranslate"><span class="pre">alexapy.const</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="alexapy.errors.html"><code class="docutils literal notranslate"><span class="pre">alexapy.errors</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="alexapy.helpers.html"><code class="docutils literal notranslate"><span class="pre">alexapy.helpers</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#functions">Functions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#alexapy.hide_email"><code class="docutils literal notranslate"><span class="pre">hide_email()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#alexapy.hide_serial"><code class="docutils literal notranslate"><span class="pre">hide_serial()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#alexapy.obfuscate"><code class="docutils literal notranslate"><span class="pre">obfuscate()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#classes">Classes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#alexapy.AlexaLogin"><code class="docutils literal notranslate"><span class="pre">AlexaLogin</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#alexapy.AlexaAPI"><code class="docutils literal notranslate"><span class="pre">AlexaAPI</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#alexapy.AlexaProxy"><code class="docutils literal notranslate"><span class="pre">AlexaProxy</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#alexapy.HTTP2EchoClient"><code class="docutils literal notranslate"><span class="pre">HTTP2EchoClient</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#alexapy.WebsocketEchoClient"><code class="docutils literal notranslate"><span class="pre">WebsocketEchoClient</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#exceptions">Exceptions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#alexapy.AlexapyConnectionError"><code class="docutils literal notranslate"><span class="pre">AlexapyConnectionError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#alexapy.AlexapyLoginCloseRequested"><code class="docutils literal notranslate"><span class="pre">AlexapyLoginCloseRequested</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#alexapy.AlexapyLoginError"><code class="docutils literal notranslate"><span class="pre">AlexapyLoginError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#alexapy.AlexapyPyotpInvalidKey"><code class="docutils literal notranslate"><span class="pre">AlexapyPyotpInvalidKey</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">AlexaPy</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content style-external-links">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li><code class="docutils literal notranslate"><span class="pre">alexapy</span></code></li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/alexapy/alexapy.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="module-alexapy">
+<span id="alexapy"></span><h1><code class="docutils literal notranslate"><span class="pre">alexapy</span></code><a class="headerlink" href="#module-alexapy" title="Permalink to this heading">¶</a></h1>
+<p>Python Package for controlling Alexa devices (echo dot, etc) programmatically.</p>
+<p>SPDX-License-Identifier: Apache-2.0</p>
+<p>For more details about this api, please refer to the documentation at
+<a class="reference external" href="https://gitlab.com/keatontaylor/alexapy">https://gitlab.com/keatontaylor/alexapy</a></p>
+<nav class="contents local" id="contents">
+<ul class="simple">
+<li><p><a class="reference internal" href="#submodules" id="id3">Submodules</a></p></li>
+<li><p><a class="reference internal" href="#functions" id="id4">Functions</a></p></li>
+<li><p><a class="reference internal" href="#classes" id="id5">Classes</a></p></li>
+<li><p><a class="reference internal" href="#exceptions" id="id6">Exceptions</a></p></li>
+</ul>
+</nav>
+<section id="submodules">
+<h2><a class="toc-backref" href="#id3" role="doc-backlink">Submodules</a><a class="headerlink" href="#submodules" title="Permalink to this heading">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="alexapy.alexaapi.html"><code class="docutils literal notranslate"><span class="pre">alexapy.alexaapi</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="alexapy.alexahttp2.html"><code class="docutils literal notranslate"><span class="pre">alexapy.alexahttp2</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="alexapy.alexalogin.html"><code class="docutils literal notranslate"><span class="pre">alexapy.alexalogin</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="alexapy.alexaproxy.html"><code class="docutils literal notranslate"><span class="pre">alexapy.alexaproxy</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="alexapy.alexawebsocket.html"><code class="docutils literal notranslate"><span class="pre">alexapy.alexawebsocket</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="alexapy.const.html"><code class="docutils literal notranslate"><span class="pre">alexapy.const</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="alexapy.errors.html"><code class="docutils literal notranslate"><span class="pre">alexapy.errors</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="alexapy.helpers.html"><code class="docutils literal notranslate"><span class="pre">alexapy.helpers</span></code></a></li>
+</ul>
+</div>
+</section>
+<section id="functions">
+<h2><a class="toc-backref" href="#id4" role="doc-backlink">Functions</a><a class="headerlink" href="#functions" title="Permalink to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="#alexapy.hide_email" title="alexapy.hide_email"><code class="xref py py-func docutils literal notranslate"><span class="pre">hide_email()</span></code></a>:
+Obfuscate email.</p></li>
+<li><p><a class="reference internal" href="#alexapy.hide_serial" title="alexapy.hide_serial"><code class="xref py py-func docutils literal notranslate"><span class="pre">hide_serial()</span></code></a>:
+Obfuscate serial.</p></li>
+<li><p><a class="reference internal" href="#alexapy.obfuscate" title="alexapy.obfuscate"><code class="xref py py-func docutils literal notranslate"><span class="pre">obfuscate()</span></code></a>:
+Obfuscate email, password, and other known sensitive keys.</p></li>
+</ul>
+<dl class="py function">
+<dt class="sig sig-object py" id="alexapy.hide_email">
+<span class="sig-prename descclassname"><span class="pre">alexapy.</span></span><span class="sig-name descname"><span class="pre">hide_email</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">email</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#alexapy.hide_email" title="Permalink to this definition">¶</a></dt>
+<dd><p>Obfuscate email.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="alexapy.hide_serial">
+<span class="sig-prename descclassname"><span class="pre">alexapy.</span></span><span class="sig-name descname"><span class="pre">hide_serial</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">item</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">list</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">list</span></span></span><a class="headerlink" href="#alexapy.hide_serial" title="Permalink to this definition">¶</a></dt>
+<dd><p>Obfuscate serial.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="alexapy.obfuscate">
+<span class="sig-prename descclassname"><span class="pre">alexapy.</span></span><span class="sig-name descname"><span class="pre">obfuscate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">item</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#alexapy.obfuscate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Obfuscate email, password, and other known sensitive keys.</p>
+</dd></dl>
+
+</section>
+<section id="classes">
+<h2><a class="toc-backref" href="#id5" role="doc-backlink">Classes</a><a class="headerlink" href="#classes" title="Permalink to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="#alexapy.AlexaLogin" title="alexapy.AlexaLogin"><code class="xref py py-class docutils literal notranslate"><span class="pre">AlexaLogin</span></code></a>:
+Class to handle login connection to Alexa. This class will not reconnect.</p></li>
+<li><p><a class="reference internal" href="#alexapy.AlexaAPI" title="alexapy.AlexaAPI"><code class="xref py py-class docutils literal notranslate"><span class="pre">AlexaAPI</span></code></a>:
+Class for accessing a specific Alexa device using rest API.</p></li>
+<li><p><a class="reference internal" href="#alexapy.AlexaProxy" title="alexapy.AlexaProxy"><code class="xref py py-class docutils literal notranslate"><span class="pre">AlexaProxy</span></code></a>:
+Class to handle proxy login connections to Alexa.</p></li>
+<li><p><a class="reference internal" href="#alexapy.HTTP2EchoClient" title="alexapy.HTTP2EchoClient"><code class="xref py py-class docutils literal notranslate"><span class="pre">HTTP2EchoClient</span></code></a>:
+HTTP2 Client Class for Echo Devices.</p></li>
+<li><p><a class="reference internal" href="#alexapy.WebsocketEchoClient" title="alexapy.WebsocketEchoClient"><code class="xref py py-class docutils literal notranslate"><span class="pre">WebsocketEchoClient</span></code></a>:
+WebSocket Client Class for Echo Devices.</p></li>
+</ul>
+<dl class="py class">
+<dt class="sig sig-object py" id="alexapy.AlexaLogin">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">alexapy.</span></span><span class="sig-name descname"><span class="pre">AlexaLogin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">email</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">password</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">outputpath</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">debug</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">otp_secret</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">oauth</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">uuid</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">oauth_login</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#alexapy.AlexaLogin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Class to handle login connection to Alexa. This class will not reconnect.</p>
+<p>Args:
+url (string): Localized Amazon domain (e.g., amazon.com)
+email (string): Amazon login account
+password (string): Password for Amazon login account
+outputpath (function): Local path with write access for storing files
+debug (boolean): Enable additional debugging including debug file creation
+otp_secret (string): TOTP Secret key for automatic 2FA filling
+uuid: (string): Unique 32 char hex to serve as app serial number for registration</p>
+<p class="rubric">Inheritance</p>
+<div class="graphviz"><object data="../_images/inheritance-078e2110f96cef1920d4a6457a562d81c0424699.svg" type="image/svg+xml" class="inheritance graphviz">
+<p class="warning">Inheritance diagram of AlexaLogin</p></object></div>
+<dl class="py method">
+<dt class="sig sig-object py" id="alexapy.AlexaLogin.check_domain">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">check_domain</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#alexapy.AlexaLogin.check_domain" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check whether logged into appropriate login domain.</p>
+<dl class="simple">
+<dt>Returns</dt><dd><p>bool: True if in correct domain</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alexapy.AlexaLogin.close">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#alexapy.AlexaLogin.close" title="Permalink to this definition">¶</a></dt>
+<dd><p>Close connection for login.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="alexapy.AlexaLogin.close_requested">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">close_requested</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#alexapy.AlexaLogin.close_requested" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return whether this Login has been asked to close.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="alexapy.AlexaLogin.customer_id">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">customer_id</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#alexapy.AlexaLogin.customer_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return customer_id for this Login.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="alexapy.AlexaLogin.email">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">email</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#alexapy.AlexaLogin.email" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return email or mobile account for this Login.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alexapy.AlexaLogin.exchange_token_for_cookies">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">exchange_token_for_cookies</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#alexapy.AlexaLogin.exchange_token_for_cookies" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate new session cookies using refresh token.</p>
+<dl class="simple">
+<dt>Returns</dt><dd><p>bool: True if successful</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alexapy.AlexaLogin.finalize_login">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">finalize_login</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#alexapy.AlexaLogin.finalize_login" title="Permalink to this definition">¶</a></dt>
+<dd><p>Perform final steps after successful login.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alexapy.AlexaLogin.get_csrf">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_csrf</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#alexapy.AlexaLogin.get_csrf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate csrf if missing.</p>
+<dl class="simple">
+<dt>Returns</dt><dd><p>bool: True if csrf is found</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alexapy.AlexaLogin.get_inputs">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_inputs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">soup</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">BeautifulSoup</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">searchfield</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#alexapy.AlexaLogin.get_inputs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parse soup for form with searchfield.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alexapy.AlexaLogin.get_tokens">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_tokens</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#alexapy.AlexaLogin.get_tokens" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get access and refresh tokens after registering device using cookies.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if successful.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alexapy.AlexaLogin.get_totp_token">
+<span class="sig-name descname"><span class="pre">get_totp_token</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#alexapy.AlexaLogin.get_totp_token" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate Timed based OTP token.</p>
+<dl class="simple">
+<dt>Returns</dt><dd><p>Text: OTP for current time.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="alexapy.AlexaLogin.lastreq">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">lastreq</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ClientResponse</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#alexapy.AlexaLogin.lastreq" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return last response for last request for this Login.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="alexapy.AlexaLogin.links">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">links</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#alexapy.AlexaLogin.links" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return string list of links from last page for this Login.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alexapy.AlexaLogin.load_cookie">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">load_cookie</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cookies_txt</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="headerlink" href="#alexapy.AlexaLogin.load_cookie" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load cookie from disk.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alexapy.AlexaLogin.login">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">login</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cookies</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#alexapy.AlexaLogin.login" title="Permalink to this definition">¶</a></dt>
+<dd><p>Login to Amazon.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="alexapy.AlexaLogin.password">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">password</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#alexapy.AlexaLogin.password" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return password for this Login.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alexapy.AlexaLogin.refresh_access_token">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">refresh_access_token</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#alexapy.AlexaLogin.refresh_access_token" title="Permalink to this definition">¶</a></dt>
+<dd><p>Refresh access token and expires in using refresh token.</p>
+<dl class="simple">
+<dt>Returns</dt><dd><p>bool: Return true if successful.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alexapy.AlexaLogin.register_capabilities">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">register_capabilities</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#alexapy.AlexaLogin.register_capabilities" title="Permalink to this definition">¶</a></dt>
+<dd><p>Register capabilities of virtual device.</p>
+<p>Required for HTTP2/Push.
+<a class="reference external" href="https://developer.amazon.com/en-US/docs/alexa/alexa-voice-service/capabilities-api.html">https://developer.amazon.com/en-US/docs/alexa/alexa-voice-service/capabilities-api.html</a></p>
+<dl class="simple">
+<dt>Returns</dt><dd><p>bool: Return True if successful.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alexapy.AlexaLogin.reset">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">reset</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#alexapy.AlexaLogin.reset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove data related to existing login.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alexapy.AlexaLogin.save_cookiefile">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">save_cookiefile</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#alexapy.AlexaLogin.save_cookiefile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Save login session cookies to file.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="alexapy.AlexaLogin.session">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">session</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ClientSession</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#alexapy.AlexaLogin.session" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return session for this Login.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alexapy.AlexaLogin.set_totp">
+<span class="sig-name descname"><span class="pre">set_totp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">otp_secret</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">TOTP</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="headerlink" href="#alexapy.AlexaLogin.set_totp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enable a TOTP generator for the login.</p>
+<dl class="simple">
+<dt>Args</dt><dd><p>otp_secret (Text): Secret. If blank, it will remove the TOTP entry.</p>
+</dd>
+<dt>Returns</dt><dd><p>Optional[pyotp.TOTP]: The pyotp TOTP object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="alexapy.AlexaLogin.start_url">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">start_url</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">URL</span></em><a class="headerlink" href="#alexapy.AlexaLogin.start_url" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return start url for this Login.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alexapy.AlexaLogin.test_loggedin">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">test_loggedin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cookies</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#alexapy.AlexaLogin.test_loggedin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function that will test the connection is logged in.</p>
+<p>Tests:
+- Attempts to get authentication and compares to expected login email
+Returns false if unsuccessful getting json or the emails don’t match
+Returns false if no csrf found; necessary to issue commands</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="alexapy.AlexaLogin.url">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">url</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#alexapy.AlexaLogin.url" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return url for this Login.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="alexapy.AlexaAPI">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">alexapy.</span></span><span class="sig-name descname"><span class="pre">AlexaAPI</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">device</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">login</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#alexapy.AlexaLogin" title="alexapy.alexalogin.AlexaLogin"><span class="pre">AlexaLogin</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#alexapy.AlexaAPI" title="Permalink to this definition">¶</a></dt>
+<dd><p>Class for accessing a specific Alexa device using rest API.</p>
+<p>Args:
+device (AlexaClient): Instance of an AlexaClient to access
+login (AlexaLogin): Successfully logged in AlexaLogin</p>
+<p class="rubric">Inheritance</p>
+<div class="graphviz"><object data="../_images/inheritance-0b5aabddf111bec39a546c9efb6d1389fd50496b.svg" type="image/svg+xml" class="inheritance graphviz">
+<p class="warning">Inheritance diagram of AlexaAPI</p></object></div>
+<dl class="py method">
+<dt class="sig sig-object py" id="alexapy.AlexaAPI.clear_history">
+<em class="property"><span class="pre">async</span><span class="w"> </span><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">clear_history</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">login</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#alexapy.AlexaLogin" title="alexapy.alexalogin.AlexaLogin"><span class="pre">AlexaLogin</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">items</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">50</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#alexapy.AlexaAPI.clear_history" title="Permalink to this definition">¶</a></dt>
+<dd><p>Clear entries in history.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alexapy.AlexaAPI.disconnect_bluetooth">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">disconnect_bluetooth</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#alexapy.AlexaAPI.disconnect_bluetooth" title="Permalink to this definition">¶</a></dt>
+<dd><p>Disconnect all bluetooth devices.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alexapy.AlexaAPI.force_logout">
+<em class="property"><span class="pre">async</span><span class="w"> </span><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">force_logout</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#alexapy.AlexaAPI.force_logout" title="Permalink to this definition">¶</a></dt>
+<dd><p>Force logout.</p>
+<dl class="simple">
+<dt>Raises</dt><dd><p>AlexapyLoginError: Raise AlexapyLoginError</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alexapy.AlexaAPI.forward">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#alexapy.AlexaAPI.forward" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fastforward.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alexapy.AlexaAPI.get_activities">
+<em class="property"><span class="pre">async</span><span class="w"> </span><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_activities</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">login</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#alexapy.AlexaLogin" title="alexapy.alexalogin.AlexaLogin"><span class="pre">AlexaLogin</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">items</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="headerlink" href="#alexapy.AlexaAPI.get_activities" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get activities json.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alexapy.AlexaAPI.get_authentication">
+<em class="property"><span class="pre">async</span><span class="w"> </span><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_authentication</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">login</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#alexapy.AlexaLogin" title="alexapy.alexalogin.AlexaLogin"><span class="pre">AlexaLogin</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="headerlink" href="#alexapy.AlexaAPI.get_authentication" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get authentication json.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alexapy.AlexaAPI.get_automations">
+<em class="property"><span class="pre">async</span><span class="w"> </span><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_automations</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">login</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#alexapy.AlexaLogin" title="alexapy.alexalogin.AlexaLogin"><span class="pre">AlexaLogin</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">items</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1000</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="headerlink" href="#alexapy.AlexaAPI.get_automations" title="Permalink to this definition">¶</a></dt>
+<dd><p>Identify all Alexa automations.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alexapy.AlexaAPI.get_bluetooth">
+<em class="property"><span class="pre">async</span><span class="w"> </span><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_bluetooth</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">login</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="headerlink" href="#alexapy.AlexaAPI.get_bluetooth" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get paired bluetooth devices.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alexapy.AlexaAPI.get_device_preferences">
+<em class="property"><span class="pre">async</span><span class="w"> </span><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_device_preferences</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">login</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#alexapy.AlexaLogin" title="alexapy.alexalogin.AlexaLogin"><span class="pre">AlexaLogin</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="headerlink" href="#alexapy.AlexaAPI.get_device_preferences" title="Permalink to this definition">¶</a></dt>
+<dd><p>Identify all Alexa device preferences.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alexapy.AlexaAPI.get_devices">
+<em class="property"><span class="pre">async</span><span class="w"> </span><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_devices</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">login</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#alexapy.AlexaLogin" title="alexapy.alexalogin.AlexaLogin"><span class="pre">AlexaLogin</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="headerlink" href="#alexapy.AlexaAPI.get_devices" title="Permalink to this definition">¶</a></dt>
+<dd><p>Identify all Alexa devices.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alexapy.AlexaAPI.get_dnd_state">
+<em class="property"><span class="pre">async</span><span class="w"> </span><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_dnd_state</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">login</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#alexapy.AlexaLogin" title="alexapy.alexalogin.AlexaLogin"><span class="pre">AlexaLogin</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="headerlink" href="#alexapy.AlexaAPI.get_dnd_state" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get Alexa DND states.</p>
+<p>Args:
+login (AlexaLogin): Successfully logged in AlexaLogin</p>
+<p>Returns json</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alexapy.AlexaAPI.get_entity_state">
+<em class="property"><span class="pre">async</span><span class="w"> </span><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_entity_state</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">login</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#alexapy.AlexaLogin" title="alexapy.alexalogin.AlexaLogin"><span class="pre">AlexaLogin</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">entity_ids</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">appliance_ids</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="headerlink" href="#alexapy.AlexaAPI.get_entity_state" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the current state of multiple appliances.</p>
+<p>Note that this can take both entity_ids and appliance_ids.
+If you have both pieces of data available, prefer the entity id. A single entity might have multiple
+appliance ids. Its easier to ensure you don’t miss data by just providing entity id instead.</p>
+<p>Args:
+login (AlexaLogin): Successfully logged in AlexaLogin
+entity_ids (List[str]): The list of entities you want information about.
+appliance_ids: (List[str]): The list of appliances you want information about.</p>
+<p>Returns json</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alexapy.AlexaAPI.get_guard_details">
+<em class="property"><span class="pre">async</span><span class="w"> </span><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_guard_details</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">login</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#alexapy.AlexaLogin" title="alexapy.alexalogin.AlexaLogin"><span class="pre">AlexaLogin</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="headerlink" href="#alexapy.AlexaAPI.get_guard_details" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get Alexa Guard details.</p>
+<p>Args:
+login (AlexaLogin): Successfully logged in AlexaLogin</p>
+<p>Returns json</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alexapy.AlexaAPI.get_guard_state">
+<em class="property"><span class="pre">async</span><span class="w"> </span><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_guard_state</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">login</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#alexapy.AlexaLogin" title="alexapy.alexalogin.AlexaLogin"><span class="pre">AlexaLogin</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">entity_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="headerlink" href="#alexapy.AlexaAPI.get_guard_state" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get state of Alexa guard.</p>
+<p>Args:
+login (AlexaLogin): Successfully logged in AlexaLogin
+entity_id (str): applianceId of RedRock Panel</p>
+<p>Returns json</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alexapy.AlexaAPI.get_last_device_serial">
+<em class="property"><span class="pre">async</span><span class="w"> </span><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_last_device_serial</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">login</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#alexapy.AlexaLogin" title="alexapy.alexalogin.AlexaLogin"><span class="pre">AlexaLogin</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">items</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="headerlink" href="#alexapy.AlexaAPI.get_last_device_serial" title="Permalink to this definition">¶</a></dt>
+<dd><p>Identify the last device’s serial number and last summary.</p>
+<p>This will search the [last items] activity records and find the latest
+entry where Echo successfully responded.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alexapy.AlexaAPI.get_network_details">
+<em class="property"><span class="pre">async</span><span class="w"> </span><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_network_details</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">login</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#alexapy.AlexaLogin" title="alexapy.alexalogin.AlexaLogin"><span class="pre">AlexaLogin</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="headerlink" href="#alexapy.AlexaAPI.get_network_details" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the network of devices that Alexa is aware of. This is the same as calling get_guard_details().</p>
+<p>Args:
+login: (AlexaLogin): Successfully logged in AlexaLogin</p>
+<p>Returns json</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alexapy.AlexaAPI.get_notifications">
+<em class="property"><span class="pre">async</span><span class="w"> </span><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_notifications</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">login</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#alexapy.AlexaLogin" title="alexapy.alexalogin.AlexaLogin"><span class="pre">AlexaLogin</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="headerlink" href="#alexapy.AlexaAPI.get_notifications" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get Alexa notifications.</p>
+<p>Args:
+login (AlexaLogin): Successfully logged in AlexaLogin</p>
+<p>Returns json</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alexapy.AlexaAPI.get_state">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_state</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="headerlink" href="#alexapy.AlexaAPI.get_state" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get playing state.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alexapy.AlexaAPI.next">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">next</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#alexapy.AlexaAPI.next" title="Permalink to this definition">¶</a></dt>
+<dd><p>Play next.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alexapy.AlexaAPI.pause">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">pause</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#alexapy.AlexaAPI.pause" title="Permalink to this definition">¶</a></dt>
+<dd><p>Pause.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alexapy.AlexaAPI.ping">
+<em class="property"><span class="pre">async</span><span class="w"> </span><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ping</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">login</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#alexapy.AlexaLogin" title="alexapy.alexalogin.AlexaLogin"><span class="pre">AlexaLogin</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="headerlink" href="#alexapy.AlexaAPI.ping" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ping.</p>
+<p>Args:
+login (AlexaLogin): Successfully logged in AlexaLogin</p>
+<p>Returns json</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alexapy.AlexaAPI.play">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">play</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#alexapy.AlexaAPI.play" title="Permalink to this definition">¶</a></dt>
+<dd><p>Play.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alexapy.AlexaAPI.play_music">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">play_music</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">provider_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">search_phrase</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">customer_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timer</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">queue_delay</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extra</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#alexapy.AlexaAPI.play_music" title="Permalink to this definition">¶</a></dt>
+<dd><p>Play music based on search.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>provider_id</strong> (<em>str</em>) – Amazon music provider.</p></li>
+<li><p><strong>search_phrase</strong> (<em>str</em>) – Phrase to be searched for</p></li>
+<li><p><strong>customer_id</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em><em>, </em><em>optional</em>) – CustomerId to use for authorization. When none
+specified this defaults to the logged in user. Used
+with households where others may have their own
+music.</p></li>
+<li><p><strong>timer</strong> (<em>Optional</em><em>[</em><em>int</em><em>]</em>) – Number of seconds to play before stopping.</p></li>
+<li><p><strong>queue_delay</strong> (<em>float</em><em>, </em><em>optional</em>) – The number of seconds to wait
+for commands to queue together.
+Must be positive. Defaults to 1.5.</p></li>
+<li><p><strong>extra</strong> (<em>Dict</em>) – Extra dictionary array; functionality undetermined</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alexapy.AlexaAPI.play_sound">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">play_sound</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sound_string_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">customer_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">queue_delay</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extra</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#alexapy.AlexaAPI.play_sound" title="Permalink to this definition">¶</a></dt>
+<dd><p>Play Alexa sound.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alexapy.AlexaAPI.previous">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">previous</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#alexapy.AlexaAPI.previous" title="Permalink to this definition">¶</a></dt>
+<dd><p>Play previous.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alexapy.AlexaAPI.process_targets">
+<span class="sig-name descname"><span class="pre">process_targets</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">targets</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#alexapy.AlexaAPI.process_targets" title="Permalink to this definition">¶</a></dt>
+<dd><p>Process targets list to generate list of devices.</p>
+<dl class="simple">
+<dt>Keyword Arguments</dt><dd><dl class="simple">
+<dt>targets {Optional[List[str]]} – List of serial numbers</dt><dd><p>(default: {[]})</p>
+</dd>
+</dl>
+</dd>
+<dt>Returns</dt><dd><p>List[Dict[str, str] – List of device dicts</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alexapy.AlexaAPI.repeat">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">repeat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">setting</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#alexapy.AlexaAPI.repeat" title="Permalink to this definition">¶</a></dt>
+<dd><p>Repeat.</p>
+<p>setting (string) : true or false</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alexapy.AlexaAPI.rewind">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">rewind</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#alexapy.AlexaAPI.rewind" title="Permalink to this definition">¶</a></dt>
+<dd><p>Rewind.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alexapy.AlexaAPI.run_behavior">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">run_behavior</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node_data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">queue_delay</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1.5</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#alexapy.AlexaAPI.run_behavior" title="Permalink to this definition">¶</a></dt>
+<dd><p>Queue node_data for running a behavior in sequence.</p>
+<p>Amazon sequences and routines are based on node_data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>node_data</strong> (<em>dict</em><em>, </em><em>list</em><em> of </em><em>dicts</em>) – The node_data to run.</p></li>
+<li><p><strong>queue_delay</strong> (<em>float</em><em>, </em><em>optional</em>) – The number of seconds to wait
+for commands to queue together.
+Defaults to 1.5.
+Must be positive.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alexapy.AlexaAPI.run_custom">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">run_custom</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">customer_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">queue_delay</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extra</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#alexapy.AlexaAPI.run_custom" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run Alexa skill.</p>
+<p>This allows running exactly what you can say to alexa.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>text</strong> (<em>string</em>) – The full text you want alexa to execute.</p></li>
+<li><p><strong>customer_id</strong> (<em>string</em>) – CustomerId to use for authorization. When none
+specified this defaults to the logged in user. Used
+with households where others may have their own
+music.</p></li>
+<li><p><strong>queue_delay</strong> (<em>float</em><em>, </em><em>optional</em>) – The number of seconds to wait
+for commands to queue together.
+Defaults to 1.5.
+Must be positive.</p></li>
+<li><p><strong>extra</strong> (<em>Dict</em>) – Extra dictionary array; functionality undetermined</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alexapy.AlexaAPI.run_routine">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">run_routine</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">utterance</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">customer_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">queue_delay</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1.5</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#alexapy.AlexaAPI.run_routine" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run Alexa automation routine.</p>
+<p>This allows running of defined Alexa automation routines.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>utterance</strong> (<em>string</em>) – The Alexa utterance to run the routine.</p></li>
+<li><p><strong>customer_id</strong> (<em>string</em>) – CustomerId to use for authorization. When none
+specified this defaults to the logged in user. Used
+with households where others may have their own
+music.</p></li>
+<li><p><strong>queue_delay</strong> (<em>float</em><em>, </em><em>optional</em>) – The number of seconds to wait
+for commands to queue together.
+Defaults to 1.5.
+Must be positive.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alexapy.AlexaAPI.run_skill">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">run_skill</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">skill_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">customer_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">queue_delay</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#alexapy.AlexaAPI.run_skill" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run Alexa skill.</p>
+<p>This allows running of defined Alexa skill.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>skill_id</strong> (<em>string</em>) – The full skill id.</p></li>
+<li><p><strong>customer_id</strong> (<em>string</em>) – CustomerId to use for authorization. When none
+specified this defaults to the logged in user. Used
+with households where others may have their own
+music.</p></li>
+<li><p><strong>queue_delay</strong> (<em>float</em><em>, </em><em>optional</em>) – The number of seconds to wait
+for commands to queue together.
+Defaults to 1.5.
+Must be positive.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alexapy.AlexaAPI.send_announcement">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">send_announcement</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'all'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'Announcement'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">customer_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">targets</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">queue_delay</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extra</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#alexapy.AlexaAPI.send_announcement" title="Permalink to this definition">¶</a></dt>
+<dd><p>Send announcement to Alexa devices.</p>
+<p>This uses the AlexaAnnouncement and allows visual display on the Show.
+It will beep prior to speaking.</p>
+<p>Args:
+message (string): The message to speak or display.
+method (string): speak, show, or all
+title (string): title to display on Echo show
+customer_id (string): CustomerId to use for authorization. When none</p>
+<blockquote>
+<div><p>specified this defaults to the logged in user. Used
+with households where others may have their own
+music.</p>
+</div></blockquote>
+<dl class="simple">
+<dt>targets (list(string)): List of serialNumber or accountName to send the</dt><dd><p>announcement to. Only those in this AlexaAPI
+account will be searched. If None, announce
+will be self.</p>
+</dd>
+<dt>queue_delay (float, optional): The number of seconds to wait</dt><dd><p>for commands to queue together.
+Defaults to 1.5.
+Must be positive.</p>
+</dd>
+</dl>
+<p>extra (Dict): Extra dictionary array; functionality undetermined</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alexapy.AlexaAPI.send_dropin_notification">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">send_dropin_notification</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'AlexaAPI</span> <span class="pre">Dropin</span> <span class="pre">Notification'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">customer_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">queue_delay</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extra</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#alexapy.AlexaAPI.send_dropin_notification" title="Permalink to this definition">¶</a></dt>
+<dd><p>Send dropin notification to Alexa app for Alexa device.</p>
+<p>Push a message to mobile devices with the Alexa App. This can spawn a
+notification to drop in on a specific device.</p>
+<p>Args:
+message (string): The message to push to the mobile device.
+title (string): Title for push notification
+customer_id (string): CustomerId to use for sending. When none</p>
+<blockquote>
+<div><p>specified this defaults to the logged in user.</p>
+</div></blockquote>
+<dl class="simple">
+<dt>queue_delay (float, optional): The number of seconds to wait</dt><dd><p>for commands to queue together.
+Defaults to 1.5.
+Must be positive.</p>
+</dd>
+</dl>
+<p>extra (Dict): Extra dictionary array; functionality undetermined</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alexapy.AlexaAPI.send_mobilepush">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">send_mobilepush</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'AlexaAPI</span> <span class="pre">Message'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">customer_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">queue_delay</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extra</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#alexapy.AlexaAPI.send_mobilepush" title="Permalink to this definition">¶</a></dt>
+<dd><p>Send mobile push to Alexa app.</p>
+<p>Push a message to mobile devices with the Alexa App. This probably
+should be a static method.</p>
+<p>Args:
+message (string): The message to push to the mobile device.
+title (string): Title for push notification
+customer_id (string): CustomerId to use for sending. When none</p>
+<blockquote>
+<div><p>specified this defaults to the logged in user.</p>
+</div></blockquote>
+<dl class="simple">
+<dt>queue_delay (float, optional): The number of seconds to wait</dt><dd><p>for commands to queue together.
+Defaults to 1.5.
+Must be positive.</p>
+</dd>
+</dl>
+<p>extra (Dict): Extra dictionary array; functionality undetermined</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alexapy.AlexaAPI.send_sequence">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">send_sequence</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sequence</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">customer_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">queue_delay</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extra</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#alexapy.AlexaAPI.send_sequence" title="Permalink to this definition">¶</a></dt>
+<dd><p>Send sequence command.</p>
+<p>This allows some programmatic control of Echo device using the behaviors
+API and is the basis of play_music, send_announcement, and send_tts.</p>
+<p>Args:
+sequence (string): The Alexa sequence.  Supported list below.
+customer_id (string): CustomerId to use for authorization. When none</p>
+<blockquote>
+<div><p>specified this defaults to the logged in user. Used
+with households where others may have their own
+music.</p>
+</div></blockquote>
+<dl class="simple">
+<dt>queue_delay (float, optional): The number of seconds to wait</dt><dd><p>for commands to queue together.
+Defaults to 1.5.
+Must be positive.</p>
+</dd>
+</dl>
+<p>extra (Dict): Extra dictionary array; functionality undetermined
+<a href="#id1"><span class="problematic" id="id2">**</span></a>kwargs : Each named variable must match a recognized Amazon variable</p>
+<blockquote>
+<div><p>within the operationPayload. Please see examples in
+play_music, send_announcement, and send_tts.
+Variables with value None are removed from the operationPayload.
+Variables prefixed with “<a href="#id7"><span class="problematic" id="id8">root_</span></a>” will be added to the root node instead.</p>
+</div></blockquote>
+<p>Supported sequences:
+Alexa.Weather.Play
+Alexa.Traffic.Play
+Alexa.FlashBriefing.Play
+Alexa.GoodMorning.Play
+Alexa.GoodNight.Play
+Alexa.SingASong.Play
+Alexa.TellStory.Play
+Alexa.FunFact.Play
+Alexa.Joke.Play
+Alexa.CleanUp.Play
+Alexa.Music.PlaySearchPhrase
+Alexa.Calendar.PlayTomorrow
+Alexa.Calendar.PlayToday
+Alexa.Calendar.PlayNext
+<a class="reference external" href="https://github.com/custom-components/alexa_media_player/wiki#sequence-commands-versions--100">https://github.com/custom-components/alexa_media_player/wiki#sequence-commands-versions–100</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alexapy.AlexaAPI.send_tts">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">send_tts</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">customer_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">targets</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">queue_delay</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1.5</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#alexapy.AlexaAPI.send_tts" title="Permalink to this definition">¶</a></dt>
+<dd><p>Send message for TTS at speaker.</p>
+<p>This is the old method which used Alexa Simon Says which did not work
+for WHA. This will not beep prior to sending. send_announcement
+should be used instead.</p>
+<p>Args:
+message (string): The message to speak. For canned messages, the message</p>
+<blockquote>
+<div><p>must start with <cite>alexa.cannedtts.speak</cite> as discovered
+in the routines.</p>
+</div></blockquote>
+<dl class="simple">
+<dt>customer_id (string): CustomerId to use for authorization. When none</dt><dd><p>specified this defaults to the logged in user. Used
+with households where others may have their own
+music.</p>
+</dd>
+<dt>targets (list(string)): WARNING: This is currently non functional due</dt><dd><p>to Alexa’s API and is only included for future
+proofing.
+List of serialNumber or accountName to send the
+tts to. Only those in this AlexaAPI
+account will be searched. If None, announce
+will be self.</p>
+</dd>
+<dt>queue_delay (float, optional): The number of seconds to wait</dt><dd><p>for commands to queue together.
+Defaults to 1.5.
+Must be positive.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alexapy.AlexaAPI.set_background">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">set_background</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#alexapy.AlexaAPI.set_background" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set background for Echo Show.</p>
+<p>Sets the background to Alexa App Photo with the specific https url.</p>
+<p>Args
+url (URL): valid https url for the image</p>
+<p>Returns
+Whether the command was successful.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alexapy.AlexaAPI.set_bluetooth">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">set_bluetooth</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mac</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#alexapy.AlexaAPI.set_bluetooth" title="Permalink to this definition">¶</a></dt>
+<dd><p>Pair with bluetooth device with mac address.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alexapy.AlexaAPI.set_dnd_state">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">set_dnd_state</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#alexapy.AlexaAPI.set_dnd_state" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set Do Not Disturb state.</p>
+<p>Args:
+state (boolean): true or false</p>
+<p>Returns json</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alexapy.AlexaAPI.set_guard_state">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">set_guard_state</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">entity_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">state</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">queue_delay</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1.5</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#alexapy.AlexaAPI.set_guard_state" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set Guard state.</p>
+<p>Args:
+entity_id (str): numeric ending of applianceId of RedRock Panel
+state (str): AWAY, HOME
+queue_delay (float, optional): The number of seconds to wait</p>
+<blockquote>
+<div><p>for commands to queue together.
+Defaults to 1.5.
+Must be positive.</p>
+</div></blockquote>
+<p>Returns json</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alexapy.AlexaAPI.set_light_state">
+<em class="property"><span class="pre">async</span><span class="w"> </span><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">set_light_state</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">login</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#alexapy.AlexaLogin" title="alexapy.alexalogin.AlexaLogin"><span class="pre">AlexaLogin</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">entity_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">power_on</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">brightness</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color_temperature_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="headerlink" href="#alexapy.AlexaAPI.set_light_state" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set state of a light.</p>
+<p>Args:
+login (AlexaLogin): Successfully logged in AlexaLogin
+entity_id (str): Entity ID of The light. Not the Application ID.
+power_on (bool): Should the light be on or off.
+brightness (Optional[int]): 0-100 or None to leave as is
+color_name (Optional[str]): The name of a color that Alexa supports in snake case.
+color_temperature_name (Optional[str]): The name of a color temperature name that Alexa supports in snake case.</p>
+<p>Returns json</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alexapy.AlexaAPI.set_media">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">set_media</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#alexapy.AlexaAPI.set_media" title="Permalink to this definition">¶</a></dt>
+<dd><p>Select the media player.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alexapy.AlexaAPI.set_notifications">
+<em class="property"><span class="pre">async</span><span class="w"> </span><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">set_notifications</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">login</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#alexapy.AlexaLogin" title="alexapy.alexalogin.AlexaLogin"><span class="pre">AlexaLogin</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="headerlink" href="#alexapy.AlexaAPI.set_notifications" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update Alexa notification.</p>
+<p>Args:
+login (AlexaLogin): Successfully logged in AlexaLogin
+data : Data to pass to notifications</p>
+<p>Returns json</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alexapy.AlexaAPI.set_volume">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">set_volume</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">volume</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">customer_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">queue_delay</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1.5</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#alexapy.AlexaAPI.set_volume" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set volume.</p>
+<p>Args:
+volume (float): The volume between 0 and 1.
+customer_id (string): CustomerId to use for sending. When none</p>
+<blockquote>
+<div><p>specified this defaults to the logged in user.</p>
+</div></blockquote>
+<dl class="simple">
+<dt>queue_delay (float, optional): The number of seconds to wait</dt><dd><p>for commands to queue together.
+Defaults to 1.5.
+Must be positive.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alexapy.AlexaAPI.shuffle">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">shuffle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">setting</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#alexapy.AlexaAPI.shuffle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Shuffle.</p>
+<p>setting (string) : true or false</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alexapy.AlexaAPI.static_set_guard_state">
+<em class="property"><span class="pre">async</span><span class="w"> </span><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">static_set_guard_state</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">login</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#alexapy.AlexaLogin" title="alexapy.alexalogin.AlexaLogin"><span class="pre">AlexaLogin</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">entity_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">state</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="headerlink" href="#alexapy.AlexaAPI.static_set_guard_state" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set state of Alexa guard.</p>
+<p>Args:
+login (AlexaLogin): Successfully logged in AlexaLogin
+entity_id (str): entityId of RedRock Panel
+state (str): ARMED_AWAY, ARMED_STAY</p>
+<p>Returns json</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alexapy.AlexaAPI.stop">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">stop</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">customer_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">queue_delay</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">all_devices</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#alexapy.AlexaAPI.stop" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stop device playback.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Keyword Arguments<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>(</strong><strong>default</strong> (<em>all_devices {bool} -- Whether all devices should be stopped</em>) – {None})</p></li>
+<li><p><strong>wait</strong> (<em>queue_delay {float} -- The number</em><em> of </em><em>seconds to</em>) – for commands to queue together.
+Must be positive.
+(default: {1.5})</p></li>
+<li><p><strong>(</strong><strong>default</strong> – {False})</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alexapy.AlexaAPI.update_login">
+<span class="sig-name descname"><span class="pre">update_login</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">login</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#alexapy.AlexaLogin" title="alexapy.alexalogin.AlexaLogin"><span class="pre">AlexaLogin</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#alexapy.AlexaAPI.update_login" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update Login if it has changed.</p>
+<dl class="simple">
+<dt>Args</dt><dd><p>login (AlexaLogin): AlexaLogin to check</p>
+</dd>
+<dt>Returns</dt><dd><p>bool: True if change detected</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="alexapy.AlexaProxy">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">alexapy.</span></span><span class="sig-name descname"><span class="pre">AlexaProxy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">login</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#alexapy.AlexaLogin" title="alexapy.alexalogin.AlexaLogin"><span class="pre">AlexaLogin</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">base_url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#alexapy.AlexaProxy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Class to handle proxy login connections to Alexa.</p>
+<p class="rubric">Inheritance</p>
+<div class="graphviz"><object data="../_images/inheritance-f63de12107af273958ed258646f84798cc7a3808.svg" type="image/svg+xml" class="inheritance graphviz">
+<p class="warning">Inheritance diagram of AlexaProxy</p></object></div>
+<dl class="py method">
+<dt class="sig sig-object py" id="alexapy.AlexaProxy.autofill">
+<span class="sig-name descname"><span class="pre">autofill</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">items</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">html</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#alexapy.AlexaProxy.autofill" title="Permalink to this definition">¶</a></dt>
+<dd><p>Autofill input tags in form in html.</p>
+<dl class="simple">
+<dt>Args</dt><dd><p>html (Text): html to convert
+items (dict): Dictionary of values to fill</p>
+</dd>
+<dt>Returns</dt><dd><p>Text: html with values filled in</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alexapy.AlexaProxy.change_login">
+<span class="sig-name descname"><span class="pre">change_login</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">login</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#alexapy.AlexaLogin" title="alexapy.alexalogin.AlexaLogin"><span class="pre">AlexaLogin</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#alexapy.AlexaProxy.change_login" title="Permalink to this definition">¶</a></dt>
+<dd><p>Change login.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>login</strong> (<a class="reference internal" href="#alexapy.AlexaLogin" title="alexapy.AlexaLogin"><em>AlexaLogin</em></a>) – AlexaLogin object to update after completion of proxy.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alexapy.AlexaProxy.test_amazon_url">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">test_amazon_url</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">resp</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">query</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">URL</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="headerlink" href="#alexapy.AlexaProxy.test_amazon_url" title="Permalink to this definition">¶</a></dt>
+<dd><p>Test for Alexa success.</p>
+<dl class="simple">
+<dt>Args</dt><dd><p>resp (httpx.Response): The aiohttp response.
+data (Dict[Text, Any]): Dictionary of all post data captured through proxy with overwrites for duplicate keys.
+query (Dict[Text, Any]): Dictionary of all query data with overwrites for duplicate keys.</p>
+</dd>
+<dt>Returns</dt><dd><p>Optional[Union[URL, Text]]: URL for a http 302 redirect or Text to display on success. None indicates test did not pass.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="alexapy.HTTP2EchoClient">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">alexapy.</span></span><span class="sig-name descname"><span class="pre">HTTP2EchoClient</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hass</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">HomeAssistant</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">login</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#alexapy.AlexaLogin" title="alexapy.alexalogin.AlexaLogin"><span class="pre">AlexaLogin</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">msg_callback</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Coroutine</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">None</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">open_callback</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Coroutine</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">None</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">close_callback</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Coroutine</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">None</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">error_callback</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Coroutine</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">None</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#alexapy.HTTP2EchoClient" title="Permalink to this definition">¶</a></dt>
+<dd><p>HTTP2 Client Class for Echo Devices.</p>
+<p>Based on code from openHAB:
+<a class="reference external" href="https://github.com/Apollon77/alexa-remote/blob/bc687b9e36da7c2318c56b4e1bec677c7198dbd4/alexa-http2push.js">https://github.com/Apollon77/alexa-remote/blob/bc687b9e36da7c2318c56b4e1bec677c7198dbd4/alexa-http2push.js</a></p>
+<p class="rubric">Inheritance</p>
+<div class="graphviz"><object data="../_images/inheritance-39b242c331a6e869ddff00ab8b6ad32f343744d6.svg" type="image/svg+xml" class="inheritance graphviz">
+<p class="warning">Inheritance diagram of HTTP2EchoClient</p></object></div>
+<dl class="py method">
+<dt class="sig sig-object py" id="alexapy.HTTP2EchoClient.async_on_open">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">async_on_open</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#alexapy.HTTP2EchoClient.async_on_open" title="Permalink to this definition">¶</a></dt>
+<dd><p>Handle Async WebSocket Open.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alexapy.HTTP2EchoClient.async_run">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">async_run</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#alexapy.HTTP2EchoClient.async_run" title="Permalink to this definition">¶</a></dt>
+<dd><p>Start Async WebSocket Listener.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alexapy.HTTP2EchoClient.manage_pings">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">manage_pings</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#alexapy.HTTP2EchoClient.manage_pings" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ping.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alexapy.HTTP2EchoClient.on_close">
+<span class="sig-name descname"><span class="pre">on_close</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">future</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#alexapy.HTTP2EchoClient.on_close" title="Permalink to this definition">¶</a></dt>
+<dd><p>Handle HTTP2 Close.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alexapy.HTTP2EchoClient.on_error">
+<span class="sig-name descname"><span class="pre">on_error</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">error</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'Unspecified'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#alexapy.HTTP2EchoClient.on_error" title="Permalink to this definition">¶</a></dt>
+<dd><p>Handle HTTP2 Error.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alexapy.HTTP2EchoClient.on_message">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">on_message</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#alexapy.HTTP2EchoClient.on_message" title="Permalink to this definition">¶</a></dt>
+<dd><p>Handle New Message.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alexapy.HTTP2EchoClient.ping">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ping</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#alexapy.HTTP2EchoClient.ping" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ping.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alexapy.HTTP2EchoClient.process_messages">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">process_messages</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#alexapy.HTTP2EchoClient.process_messages" title="Permalink to this definition">¶</a></dt>
+<dd><p>Start Async WebSocket Listener.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="alexapy.WebsocketEchoClient">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">alexapy.</span></span><span class="sig-name descname"><span class="pre">WebsocketEchoClient</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">login</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#alexapy.AlexaLogin" title="alexapy.alexalogin.AlexaLogin"><span class="pre">AlexaLogin</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">msg_callback</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="pre">Message</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Coroutine</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">None</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">open_callback</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Coroutine</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">None</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">close_callback</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Coroutine</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">None</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">error_callback</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Coroutine</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">None</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#alexapy.WebsocketEchoClient" title="Permalink to this definition">¶</a></dt>
+<dd><p>WebSocket Client Class for Echo Devices.</p>
+<p>Based on code from openHAB:
+<a class="reference external" href="https://github.com/openhab/openhab2-addons/blob/master/addons/binding/org.openhab.binding.amazonechocontrol/src/main/java/org/openhab/binding/amazonechocontrol/internal/WebSocketConnection.java">https://github.com/openhab/openhab2-addons/blob/master/addons/binding/org.openhab.binding.amazonechocontrol/src/main/java/org/openhab/binding/amazonechocontrol/internal/WebSocketConnection.java</a>
+which is further based on:
+<a class="reference external" href="https://github.com/Apollon77/alexa-remote/blob/master/alexa-wsmqtt.js">https://github.com/Apollon77/alexa-remote/blob/master/alexa-wsmqtt.js</a></p>
+<p class="rubric">Inheritance</p>
+<div class="graphviz"><object data="../_images/inheritance-6c01712bd7b1f29e79a303413529d9bee6101c4e.svg" type="image/svg+xml" class="inheritance graphviz">
+<p class="warning">Inheritance diagram of WebsocketEchoClient</p></object></div>
+<dl class="py method">
+<dt class="sig sig-object py" id="alexapy.WebsocketEchoClient.async_on_open">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">async_on_open</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#alexapy.WebsocketEchoClient.async_on_open" title="Permalink to this definition">¶</a></dt>
+<dd><p>Handle Async WebSocket Open.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alexapy.WebsocketEchoClient.async_run">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">async_run</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#alexapy.WebsocketEchoClient.async_run" title="Permalink to this definition">¶</a></dt>
+<dd><p>Start Async WebSocket Listener.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alexapy.WebsocketEchoClient.on_close">
+<span class="sig-name descname"><span class="pre">on_close</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">future</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#alexapy.WebsocketEchoClient.on_close" title="Permalink to this definition">¶</a></dt>
+<dd><p>Handle WebSocket Close.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alexapy.WebsocketEchoClient.on_error">
+<span class="sig-name descname"><span class="pre">on_error</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">error</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'Unspecified'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#alexapy.WebsocketEchoClient.on_error" title="Permalink to this definition">¶</a></dt>
+<dd><p>Handle WebSocket Error.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alexapy.WebsocketEchoClient.on_message">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">on_message</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bytes</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#alexapy.WebsocketEchoClient.on_message" title="Permalink to this definition">¶</a></dt>
+<dd><p>Handle New Message.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alexapy.WebsocketEchoClient.process_messages">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">process_messages</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#alexapy.WebsocketEchoClient.process_messages" title="Permalink to this definition">¶</a></dt>
+<dd><p>Start Async WebSocket Listener.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="exceptions">
+<h2><a class="toc-backref" href="#id6" role="doc-backlink">Exceptions</a><a class="headerlink" href="#exceptions" title="Permalink to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="#alexapy.AlexapyConnectionError" title="alexapy.AlexapyConnectionError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">AlexapyConnectionError</span></code></a>:
+Define an error related to invalid requests.</p></li>
+<li><p><a class="reference internal" href="#alexapy.AlexapyLoginCloseRequested" title="alexapy.AlexapyLoginCloseRequested"><code class="xref py py-exc docutils literal notranslate"><span class="pre">AlexapyLoginCloseRequested</span></code></a>:
+Define an error related to requesting access to API after requested close.</p></li>
+<li><p><a class="reference internal" href="#alexapy.AlexapyLoginError" title="alexapy.AlexapyLoginError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">AlexapyLoginError</span></code></a>:
+Define an error related to no longer being logged in.</p></li>
+<li><p><a class="reference internal" href="#alexapy.AlexapyPyotpInvalidKey" title="alexapy.AlexapyPyotpInvalidKey"><code class="xref py py-exc docutils literal notranslate"><span class="pre">AlexapyPyotpInvalidKey</span></code></a>:
+Define an error related to invalid 2FA key.</p></li>
+</ul>
+<dl class="py exception">
+<dt class="sig sig-object py" id="alexapy.AlexapyConnectionError">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">alexapy.</span></span><span class="sig-name descname"><span class="pre">AlexapyConnectionError</span></span><a class="headerlink" href="#alexapy.AlexapyConnectionError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Define an error related to invalid requests.</p>
+<p class="rubric">Inheritance</p>
+<div class="graphviz"><object data="../_images/inheritance-ed98d79f756b913dd3027d0ac9dd51b265e77c0d.svg" type="image/svg+xml" class="inheritance graphviz">
+<p class="warning">Inheritance diagram of AlexapyConnectionError</p></object></div>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="alexapy.AlexapyLoginCloseRequested">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">alexapy.</span></span><span class="sig-name descname"><span class="pre">AlexapyLoginCloseRequested</span></span><a class="headerlink" href="#alexapy.AlexapyLoginCloseRequested" title="Permalink to this definition">¶</a></dt>
+<dd><p>Define an error related to requesting access to API after requested close.</p>
+<p class="rubric">Inheritance</p>
+<div class="graphviz"><object data="../_images/inheritance-ad7bfccd048293c2159ee03268ce807a28331e97.svg" type="image/svg+xml" class="inheritance graphviz">
+<p class="warning">Inheritance diagram of AlexapyLoginCloseRequested</p></object></div>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="alexapy.AlexapyLoginError">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">alexapy.</span></span><span class="sig-name descname"><span class="pre">AlexapyLoginError</span></span><a class="headerlink" href="#alexapy.AlexapyLoginError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Define an error related to no longer being logged in.</p>
+<p class="rubric">Inheritance</p>
+<div class="graphviz"><object data="../_images/inheritance-5234e4d0e3e96406e21f347397f0f3a05de52425.svg" type="image/svg+xml" class="inheritance graphviz">
+<p class="warning">Inheritance diagram of AlexapyLoginError</p></object></div>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="alexapy.AlexapyPyotpInvalidKey">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">alexapy.</span></span><span class="sig-name descname"><span class="pre">AlexapyPyotpInvalidKey</span></span><a class="headerlink" href="#alexapy.AlexapyPyotpInvalidKey" title="Permalink to this definition">¶</a></dt>
+<dd><p>Define an error related to invalid 2FA key.</p>
+<p class="rubric">Inheritance</p>
+<div class="graphviz"><object data="../_images/inheritance-5a72fce59fac1b530fc4846674185a68919fac38.svg" type="image/svg+xml" class="inheritance graphviz">
+<p class="warning">Inheritance diagram of AlexapyPyotpInvalidKey</p></object></div>
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="alexapy.alexaapi.html" class="btn btn-neutral float-right" title="alexapy.alexaapi" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../index.html" class="btn btn-neutral float-left" title="Welcome to alexapy’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright .
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
