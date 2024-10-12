@@ -79,5 +79,5 @@ bump_and_publish:
   artifacts:
     paths:
       - dist
-  only:
-    - master@keatontaylor/alexapy
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "master"'
