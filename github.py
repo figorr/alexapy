@@ -5,8 +5,8 @@ import requests
 GH_TOKEN = os.getenv('GH_TOKEN')
 REPO_OWNER = 'figorr'
 REPO_NAME = 'alexapy'
-TAG_NAME = 'v1.29.7'  # Cambia esto según la versión
-RELEASE_NAME = 'Release v1.29.7'  # Cambia esto según lo que desees
+TAG_NAME = 'v1.30.0'  # Cambia esto según la versión
+RELEASE_NAME = 'Release v1.30.0'  # Cambia esto según lo que desees
 
 # Crear un nuevo Release
 def create_release():
