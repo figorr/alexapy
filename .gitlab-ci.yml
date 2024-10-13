@@ -74,18 +74,16 @@ build:
   artifacts:
     paths:
       - dist/
-      - public/
 
-pages:
-  stage: deploy
+github:
+  stage: upload
   script:
-    # Los archivos en 'public/' se servirán a través de GitLab Pages
-    - echo "GitLab Pages deployment"
-  artifacts:
-    paths:
-      - public/
-  only:
-    - master
+    - pip install requests
+    - python github.py  # Un script que subiría tus artefactos
+  variables:
+    GH_TOKEN: $GH_TOKEN  # Asegúrate de definir esto en tu configuración de variables CI/CD
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "master"'
 
 #bump_and_publish:
 #  stage: build
