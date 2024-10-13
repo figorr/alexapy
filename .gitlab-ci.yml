@@ -68,9 +68,24 @@ build:
   script:
     - pip install setuptools wheel
     - python setup.py sdist bdist_wheel
+    # Copiar los archivos de dist/ a public/ para que GitLab Pages los pueda servir
+    - mkdir -p public
+    - cp -r dist/* public/
   artifacts:
     paths:
       - dist/
+      - public/
+
+pages:
+  stage: deploy
+  script:
+    # Los archivos en 'public/' se servirán a través de GitLab Pages
+    - echo "GitLab Pages deployment"
+  artifacts:
+    paths:
+      - public/
+  only:
+    - master
 
 #bump_and_publish:
 #  stage: build
