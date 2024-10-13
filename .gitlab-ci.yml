@@ -69,9 +69,6 @@ build:
   script:
     - pip install setuptools wheel
     - python setup.py sdist bdist_wheel
-    # Copiar los archivos de dist/ a public/ para que GitLab Pages los pueda servir
-    - mkdir -p public
-    - cp -r dist/* public/
   artifacts:
     paths:
       - dist/
@@ -81,6 +78,8 @@ github:
   script:
     - pip install requests
     - python github.py  # Un script que subiría tus artefactos
+    - git remote add github https://github.com/figorr/alexapy.git  # Reemplaza con tu URL
+    - git push github master  # Actualiza la rama master en GitHub
   variables:
     GH_TOKEN: $GH_TOKEN  # Asegúrate de definir esto en tu configuración de variables CI/CD
   rules:
