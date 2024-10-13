@@ -90,3 +90,4 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.semantic_release]
 branch = "master"  # Ajusta esto si usas una rama diferente
+version = "1.29.6"
