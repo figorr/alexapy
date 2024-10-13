@@ -3,6 +3,8 @@
 coverage:
 	#Not implemented yet
 	#poetry run py.test -s --verbose --cov-report term-missing --cov-report xml --cov=alexapy tests
+build:
+    poetry build
 bump:
 	poetry run semantic-release release
 	poetry run semantic-release changelog
