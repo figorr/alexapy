@@ -58,6 +58,7 @@ disable=
   unused-argument,
   wrong-import-order,
   unsubscriptable-object
+  disable=D202
 enable=
   use-symbolic-message-instead
 
