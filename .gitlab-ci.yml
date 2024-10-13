@@ -63,6 +63,8 @@ docs:
 
 build:
   stage: build
+  variables:
+    GL_TOKEN: $GL_TOKEN 
   script:
     - pip install setuptools wheel
     - python setup.py sdist bdist_wheel
@@ -70,22 +72,22 @@ build:
     paths:
       - dist/
 
-bump_and_publish:
-  stage: build
-  variables:
-    PYPI_USERNAME: $PRODUCTION_USERNAME
-    PYPI_PASSWORD: $PRODUCTION_PASSWORD
-    GL_TOKEN: $GL_TOKEN
-  script:
-    - git config --global user.name "semantic-release (via GitLabCI)"
-    - git config --global user.email "semantic-release@GitLabCI"
-    - pip install python-semantic-release==7.34.6
-    - semantic-release publish
-    - poetry config http-basic.pypi $PYPI_USERNAME $PYPI_PASSWORD
-    - poetry publish --build
+#bump_and_publish:
+#  stage: build
+#  variables:
+#    PYPI_USERNAME: $PRODUCTION_USERNAME
+#    PYPI_PASSWORD: $PRODUCTION_PASSWORD
+#    GL_TOKEN: $GL_TOKEN
+#  script:
+#    - git config --global user.name "semantic-release (via GitLabCI)"
+#    - git config --global user.email "semantic-release@GitLabCI"
+#    - pip install python-semantic-release==7.34.6
+#    - semantic-release publish
+#    - poetry config http-basic.pypi $PYPI_USERNAME $PYPI_PASSWORD
+#    - poetry publish --build
     # - git push origin HEAD:dev
-  artifacts:
-    paths:
-      - dist
-  rules:
-    - if: '$CI_COMMIT_BRANCH == "master"'
+#  artifacts:
+#    paths:
+#      - dist
+#  rules:
+#    - if: '$CI_COMMIT_BRANCH == "master"'
