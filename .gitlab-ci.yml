@@ -13,6 +13,7 @@ cache:
 stages:
   - test
   - build
+  - upload  # Añadida la etapa upload
 
 before_script:
   - python -V
