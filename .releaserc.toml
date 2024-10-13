@@ -1,7 +1,7 @@
 branches = ["master"]
 
 [plugins]
-"@semantic-release/commit-analyzer" = { preset = "angular" }
+"@semantic-release/commit-analyzer" = { preset = "conventional" }
 "@semantic-release/release-notes-generator" = {}
 "@semantic-release/git" = {}
 "semantic-release-python" = {}

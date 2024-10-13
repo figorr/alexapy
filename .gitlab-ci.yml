@@ -12,7 +12,6 @@ cache:
 
 stages:
   - test
-  - stage
   - build
 
 before_script:
@@ -61,6 +60,15 @@ docs:
         # if any of the follow paths match a modified file.
         - alexapy/*
         - docs/*
+
+build:
+  stage: build
+  script:
+    - pip install setuptools wheel
+    - python setup.py sdist bdist_wheel
+  artifacts:
+    paths:
+      - dist/
 
 bump_and_publish:
   stage: build
