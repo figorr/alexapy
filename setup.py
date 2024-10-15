@@ -5,12 +5,12 @@ with open("README.md", "r") as f:
 
 setup(
     name="AlexaPy",  # Nombre del paquete para PyPI
-    version="1.30.0",
+    version="1.30.1",
     description="This is a forked version of AlexaPy, just for my testing puroposes in oder to test some commits before asking for a pull request. The original code and package is property of alandtse and keatontaylor, and you can find it under AlexaPy. Python API to control Amazon Echo Devices Programmatically.",
-    author="Keaton Taylor, Alan Tse",
-    author_email="keatonstaylor@gmail.com, alandtse@gmail.com",
+    author="figorr",
+    author_email="jdcuartero@yahoo.es",
     license="Apache-2.0",
-    url="https://gitlab.com/keatontaylor/alexapy",
+    url="https://gitlab.com/figorr1/alexapy",
     packages=find_packages(),  # Encuentra automáticamente los subpaquetes
     include_package_data=True,  # Incluye otros archivos listados en MANIFEST.in
     long_description=long_description,  # Agrega la descripción larga
