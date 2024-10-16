@@ -6,7 +6,7 @@ with open("README.md", "r") as f:
 setup(
     name="AlexaPy",  # Nombre del paquete para PyPI
     version="1.30.1",
-    description="This is a forked version of AlexaPy. Just for my testing puroposes. In oder to test some commits before asking for a pull request. The original code and package is property of alandtse and keatontaylor, and you can find it under AlexaPy. Python API to control Amazon Echo Devices Programmatically.",
+    description="This is a forked version of AlexaPy. Just for my testing purposes. In oder to test some commits before asking for a pull request. The original code and package is property of alandtse and keatontaylor, and you can find it under AlexaPy. Python API to control Amazon Echo Devices Programmatically.",
     author="figorr",
     author_email="jdcuartero@yahoo.es",
     license="Apache-2.0",
