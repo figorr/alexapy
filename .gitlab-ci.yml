@@ -13,7 +13,8 @@ cache:
 stages:
   - test
   - build
-  - upload  # Añadida la etapa upload
+  - sync
+  - release
 
 before_script:
   - python -V
@@ -73,13 +74,27 @@ build:
     paths:
       - dist/
 
-github:
-  stage: upload
+sync_to_github:
+  stage: sync
+  before_script:
+    - 'which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y )'
+    - eval $(ssh-agent -s)
+    # Decode de SSH Key and add this to the SSH agent
+    - echo "$GIT_SSH_KEY" | base64 -d | tr -d '\r' | ssh-add -
+    - mkdir -p ~/.ssh
+    - ssh-keyscan github.com >> ~/.ssh/known_hosts
+  script:
+    - python github-sync.py  # Starts the script to sync with GitHub master branch
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "master"'  # Only runs in the master branch
+
+release_to_github:
+  stage: release
   script:
     - pip install requests
-    - python github.py  # Un script que subiría tus artefactos
+    - python github-release.py  # The script to upload the artifacts to GitHub
   variables:
-    GH_TOKEN: $GH_TOKEN  # Asegúrate de definir esto en tu configuración de variables CI/CD
+    GH_TOKEN: $GH_TOKEN  # Be sure to include the variable in your variable settings at CI/CD
   rules:
     - if: '$CI_COMMIT_BRANCH == "master"'
 
