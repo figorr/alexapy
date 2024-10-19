@@ -72,7 +72,7 @@ class HTTP2EchoClient:
         self._http2url: str = (
             f"https://{self._options['authority']}{self._options['path']}"
         )
-        self.client = httpx.AsyncClient(http2=True)
+        self.client = httpx.AsyncClient(http2=True, verify=_SSL_CONTEXT)
         self.boundary: str = ""
         self._login = login
         self._loop: asyncio.AbstractEventLoop = (
