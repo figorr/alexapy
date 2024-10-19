@@ -1,17 +1,21 @@
 import os
 import subprocess
 
-# Define las variables necesarias
+# Set de necessary variables
 GITHUB_REPO = 'git@github.com:figorr/alexapy.git'
-BRANCH = 'master'
+BRANCH_LOCAL = 'master'   # GitLab branch
+BRANCH_REMOTE = 'master'   # GitHub branch
 
-# Función para hacer el sync de GitLab a GitHub
+# Function to sync from GitLab to GitHub
 def sync_to_github():
-    # Añadir el repositorio remoto de GitHub
+    # Add the remote repository from GitHub
     subprocess.run(['git', 'remote', 'add', 'github', GITHUB_REPO], check=True)
     
-    # Hacer el push a la rama master de GitHub
-    subprocess.run(['git', 'push', 'github', BRANCH], check=True)
+    # Fetch the latest changes from the GitLab branch
+    subprocess.run(['git', 'fetch', 'origin', BRANCH_LOCAL], check=True)
+    
+    # Push to master branch at GitHub
+    subprocess.run(['git', 'push', 'github', f'origin/{BRANCH_LOCAL}:refs/heads/{BRANCH_REMOTE}'], check=True)
 
 if __name__ == '__main__':
     sync_to_github()
