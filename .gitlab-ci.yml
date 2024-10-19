@@ -95,6 +95,9 @@ release_to_github:
     - python github-release.py  # The script to upload the artifacts to GitHub
   variables:
     GH_TOKEN: $GH_TOKEN  # Be sure to include the variable in your variable settings at CI/CD
+  artifacts:
+    paths:
+      - dist
   rules:
     - if: '$CI_COMMIT_BRANCH == "master"'
 
