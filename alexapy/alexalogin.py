@@ -623,8 +623,7 @@ class AlexaLogin:
         data = data or {}
         if cookies:
             _LOGGER.debug("Using cookies to log in")
-            if await self.test_loggedin(cookies):
-                await self.finalize_login()
+            if await self.test_loggedin(cookies):                
                 return
             await self.reset()
         _LOGGER.debug("Using credentials to log in")
@@ -1645,7 +1644,6 @@ class AlexaLogin:
             query = site_url.query
             self.access_token = query.get("openid.oa2.access_token")
             if await self.test_loggedin():
-                await self.finalize_login()
                 return
             _LOGGER.debug("Login failed; check credentials")
             status["login_failed"] = "login_failed"
