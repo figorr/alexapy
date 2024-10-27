@@ -110,8 +110,7 @@ class AlexaLogin:
         self.status: Optional[dict[str, Union[str, bool]]] = {}
         self.stats: Optional[dict[str, Union[str, bool]]] = {
             "login_timestamp": datetime.datetime(1, 1, 1),
-            "api_calls": 0,
-            "auth_retry": False,
+            "api_calls": 0,            
         }
         self._outputpath = outputpath
         self._cookiefile: list[str] = [
@@ -1768,8 +1767,7 @@ class AlexaLogin:
             self._cookiefile[0],
         )
         self.status = {}
-        self.status["login_successful"] = True
-        self.stats["auth_retry"] = True
+        self.status["login_successful"] = True        
         await self.save_cookiefile()
         #  remove extraneous Content-Type to avoid 500 errors
         self._headers.pop("Content-Type", None)

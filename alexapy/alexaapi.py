@@ -336,8 +336,7 @@ class AlexaAPI:
             response.content_type,
         )
 
-        if response.status == 401 and login.stats.get("auth_retry"):
-            login.stats["auth_retry"] = False
+        if response.status == 401:
             if await login.test_loggedin():
                 response = await getattr(session, method)(
                     url,
@@ -347,7 +346,7 @@ class AlexaAPI:
                     ssl=login._ssl,
                 )
                 _LOGGER.debug(
-                    "Error 401, retrying once request: %s: static %s: %s returned %s:%s:%s",
+                    "Error 401, retried once request: %s: static %s: %s returned %s:%s:%s",
                     hide_email(login.email),
                     response.request_info.method,
                     response.request_info.url,
