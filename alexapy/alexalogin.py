@@ -111,6 +111,7 @@ class AlexaLogin:
         self.stats: Optional[dict[str, Union[str, bool]]] = {
             "login_timestamp": datetime.datetime(1, 1, 1),
             "api_calls": 0,
+            "auth_retry": False,
         }
         self._outputpath = outputpath
         self._cookiefile: list[str] = [
@@ -557,7 +558,7 @@ class AlexaLogin:
             self.stats["login_timestamp"] = datetime.datetime.now()
             self.stats["api_calls"] = 0
             await self.check_domain()
-            await self.save_cookiefile()
+            await self.finalize_login()
             return True
         _LOGGER.debug(
             "Not logged in due to email mismatch to stored %s", hide_email(email)
@@ -1768,6 +1769,7 @@ class AlexaLogin:
         )
         self.status = {}
         self.status["login_successful"] = True
+        self.stats["auth_retry"] = True
         await self.save_cookiefile()
         #  remove extraneous Content-Type to avoid 500 errors
         self._headers.pop("Content-Type", None)
